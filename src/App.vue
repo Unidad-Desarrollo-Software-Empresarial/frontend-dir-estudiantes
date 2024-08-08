@@ -1,13 +1,11 @@
 <template>
-  <div id="app">
-    <RouterView />
-  </div>
+  <RouterView />
 </template>
 
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
+
 </script>
 
-<style>
-/* Styles for App.vue */
+<style scoped>
+
 </style>
