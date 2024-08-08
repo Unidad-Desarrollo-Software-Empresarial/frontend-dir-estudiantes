@@ -64,7 +64,6 @@ import { defineProps, defineEmits } from 'vue';
 import type { CreditItem } from '../types/credit';
 
 // Define las propiedades del componente
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<{
   data: CreditItem[];
   columns: { name: string; label: string; visible: boolean }[];
