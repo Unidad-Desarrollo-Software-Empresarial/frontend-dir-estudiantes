@@ -13,10 +13,12 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tanstack/vue-query": "^5.52.2",
+    "axios": "^1.7.5",
     "flowbite": "^2.5.1",
-    "init": "^0.1.2",
-    "install": "^0.13.0",
     "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^4.0.0-alpha.4",
+    "sweetalert2": "^11.12.4",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
