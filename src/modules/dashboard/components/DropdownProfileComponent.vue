@@ -31,12 +31,21 @@
         id="user-dropdown"
       >
         <div class="px-4 py-3">
-          <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-          <span class="block text-sm text-gray-500 truncate dark:text-gray-400"
-            >name@flowbite.com</span
-          >
+          <span class="block text-sm text-ellipsis text-gray-900 dark:text-white">{{
+            authStore.user?.usu_nombres_apellidos
+          }}</span>
+          <span class="block text-sm text-gray-500 truncate dark:text-gray-400">{{
+            authStore.user?.usu_correo
+          }}</span>
         </div>
         <ul class="py-2" aria-labelledby="user-menu-button">
+          <li class="flex justify-between pr-2">
+            <span
+              class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 dark:hover:text-white"
+              >Elegir tema</span
+            >
+            <ThemeToggleComponent />
+          </li>
           <li>
             <a
               href="#"
@@ -44,25 +53,12 @@
               >Dashboard</a
             >
           </li>
-          <li>
-            <a
+
+          <li @click="onFinishSession">
+            <span
               href="#"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-              >Settings</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-              >Earnings</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-              >Sign out</a
+              >Cerrar sesión</span
             >
           </li>
         </ul>
@@ -76,7 +72,7 @@
       >
         <span class="sr-only">Open main menu</span>
         <svg
-          class="w-5 h-5"
+          class="w-8 h-8"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -95,6 +91,18 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useAutenticacionStore } from '@/stores/autenticacion.store'
+import ThemeToggleComponent from './ThemeToggleComponent.vue'
+import { useRouter } from 'vue-router'
+
+const authStore = useAutenticacionStore()
+const router = useRouter()
+
+const onFinishSession = () => {
+  router.push({ name: 'login', replace: true })
+  authStore.onLogoutStore()
+}
+</script>
 
 <style scoped></style>

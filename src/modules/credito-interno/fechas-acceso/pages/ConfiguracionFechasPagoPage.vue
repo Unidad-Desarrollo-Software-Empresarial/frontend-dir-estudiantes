@@ -1,11 +1,11 @@
 <template>
   <DashboardLayout>
-    <h1>Dashboard page</h1>
+    <h1>Configuracion Fechas de Pago</h1>
   </DashboardLayout>
 </template>
 
 <script setup lang="ts">
-import DashboardLayout from '../layouts/DashboardLayout.vue'
+import DashboardLayout from '@/modules/dashboard/layouts/DashboardLayout.vue'
 </script>
 
 <style scoped></style>

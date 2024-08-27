@@ -25,7 +25,7 @@ export const usePostLogin = () => {
                 title: 'Login correcto',
                 timer: 2000,
             })
-            authStore.onLoginStore(data.token, data.rol, data.user)
+            authStore.onLoginStore(data.token, data.rol, data.user, data.rutas)
 
 
         },
